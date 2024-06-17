@@ -4,14 +4,17 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './sign-up.module.css';
 import Button from '../components/Button/Button';
+import { useRouter } from 'next/router';
 
-export default function signup() {
+export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [name, setName] = useState('');
   const [passwordMismatch, setPasswordMismatch] = useState(false);
   const [passwordInvalid, setPasswordInvalid] = useState(false);
+
+  const router = useRouter();
 
   useEffect(() => {
     // 비밀번호와 비밀번호 확인이 동일한지 검사
@@ -51,7 +54,7 @@ export default function signup() {
 
       if (response.status === 201) {
         alert('회원가입이 완료되었습니다.');
-        // 회원가입 성공 시 추가 작업 (예: 로그인 페이지로 이동)
+        router.push('/login');
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {

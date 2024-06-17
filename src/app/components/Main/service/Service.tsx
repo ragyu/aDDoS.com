@@ -15,13 +15,15 @@ const Service = () => {
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current; // Capture ref.current in a local variable
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.disconnect();
+      if (currentRef) {
+        observer.unobserve(currentRef); // Use the local variable for cleanup
       }
     };
   }, []);

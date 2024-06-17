@@ -24,13 +24,15 @@ const Ability = ({ src, alt, description }: AbilityProps) => {
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current; // ref.current를 로컬 변수에 할당
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.disconnect();
+      if (currentRef) {
+        observer.unobserve(currentRef); // cleanup 함수에서 로컬 변수를 사용
       }
     };
   }, []);
