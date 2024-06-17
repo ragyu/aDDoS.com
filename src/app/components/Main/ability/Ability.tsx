@@ -35,7 +35,7 @@ const Ability = ({ src, alt, description }: AbilityProps) => {
         observer.unobserve(currentRef); // cleanup 함수에서 로컬 변수를 사용
       }
     };
-  }, []);
+  }, [ref]); // ref를 의존성 배열에 추가
 
   return (
     <div

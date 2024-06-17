@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './sign-up.module.css';
 import Button from '../components/Button/Button';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -54,7 +54,7 @@ export default function Signup() {
 
       if (response.status === 201) {
         alert('회원가입이 완료되었습니다.');
-        router.push('/login');
+        router.push('/sign-in');
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {

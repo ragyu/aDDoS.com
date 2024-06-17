@@ -15,7 +15,7 @@ const Service = () => {
       { threshold: 0.1 }
     );
 
-    const currentRef = ref.current; // Capture ref.current in a local variable
+    const currentRef = ref.current; // ref.current를 로컬 변수에 할당
 
     if (currentRef) {
       observer.observe(currentRef);
@@ -23,10 +23,10 @@ const Service = () => {
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef); // Use the local variable for cleanup
+        observer.unobserve(currentRef); // 로컬 변수를 사용
       }
     };
-  }, []);
+  }, [ref]); // ref를 의존성 배열에 추가
 
   return (
     <div ref={ref} className={styles.explanation}>
