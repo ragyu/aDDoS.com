@@ -1,0 +1,38 @@
+/* Accordion.module.css */
+.question {
+  background-color: #d6e8ff;
+  color: #00007b;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.answer {
+  background-color: #fff;
+  border-left: 3px solid #007bff;
+  color: #00007b;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.answer.open {
+  padding: 10px 15px;
+  margin: 5px 0 10px 0;
+  max-height: 1000px;
+  transition: max-height 0.2s ease-in;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.arrow.open {
+  transform: rotate(90deg);
+}

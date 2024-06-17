@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=East+Sea+Dokdo&family=IBM+Plex+Sans+KR&family=Jersey+10&family=Jersey+10+Charted&display=swap');
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  background: #f0f8ff;
+  min-height: 100vh;
+}
+
+.boardtext {
+  padding: 50px;
+  font-size: 40px;
+  color: #007bff;
+}
+.postItem {
+  width: 90%;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(3, 173, 240, 0.2);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.postItem:hover {
+  transform: scale(1.0001);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.writeButton {
+  background-color: #43aad0;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to right, #43aad0, #6ad9e7);
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+  margin-top: 25px;
+}
+
+.writeButton:hover {
+  background-color: #6ad9e7;
+  transform: scale(0.98);
+}
+
+.idRatio {
+  width: 5%;
+}
+
+.titleRatio {
+  width: 40%;
+}
+.authorRatio {
+  width: 16%;
+}
+.createdAtRatio {
+  width: 30%;
+}
+.likesRatio {
+  width: 30%;
+}

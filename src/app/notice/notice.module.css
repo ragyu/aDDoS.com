@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=East+Sea+Dokdo&family=IBM+Plex+Sans+KR&family=Jersey+10&family=Jersey+10+Charted&display=swap');
+
+.noticeWrap {
+  background: #f0f8ff;
+  min-height: 100vh;
+}
+
+.notice {
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+.noticeText {
+  text-align: center;
+  padding: 50px;
+  font-size: 40px;
+  color: #007bff;
+}
+.infoRow {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #5c52b9;
+  border-bottom: 1px solid #5c52b9;
+}
+
+.infoItem {
+  margin: 20px 5px;
+  text-align: center;
+}
+
+.infoItem:first-child {
+  width: 30%;
+}
+
+.infoItem:nth-child(2) {
+  width: 100%;
+}
+
+.infoItem:nth-child(3) {
+  width: 30%;
+}
+
+.infoItem:last-child {
+  width: 60%;
+}
+
+.infoBottom {
+  display: flex;
+  border-bottom: 1px solid #bdbdc2;
+}
+
+.infoData {
+  display: flex;
+  margin: 20px 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.infoData:first-child {
+  width: 30%;
+}
+
+.infoData:nth-child(2) {
+  width: 100%;
+}
+
+.infoData:nth-child(3) {
+  width: 30%;
+}
+
+.infoData:last-child {
+  width: 60%;
+}

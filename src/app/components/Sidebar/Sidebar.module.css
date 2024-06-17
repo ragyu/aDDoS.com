@@ -1,0 +1,79 @@
+.sidebar {
+  z-index: 999;
+  width: 200px;
+  position: fixed;
+  top: 80px;
+  left: -200px;
+  height: 90%;
+  background-color: #223355;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+.sidebarLink {
+  padding: 25px;
+  color: white;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 50px;
+  background-color: #223355;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebarLink:hover {
+  background-color: RGB(102, 204, 255);
+}
+
+.sidebarOpen {
+  transform: translateX(200px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.open {
+  transform: translateX(140px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.icon {
+  margin-right: 20px;
+}
+
+.hamburger {
+  top: 90px;
+  width: 35px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000;
+  position: fixed;
+  background: #223355;
+  border: 10px solid #223355;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hamburger div {
+  width: 35px;
+  height: 4px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.open .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.open .line2 {
+  opacity: 0;
+}
+
+.open .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}

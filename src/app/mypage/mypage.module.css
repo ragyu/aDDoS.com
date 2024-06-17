@@ -1,0 +1,18 @@
+.graph {
+  text-align: center;
+}
+.section1 {
+  background: linear-gradient(to bottom right, #003366, #0066cc);
+}
+.section2 {
+  background: linear-gradient(to bottom right, #0066cc, #0099ff);
+}
+.section3 {
+  background: linear-gradient(to bottom right, #0099ff, #66b3ff);
+}
+.section4 {
+  background: linear-gradient(to bottom right, #66b3ff, #99ccff);
+}
+.section5 {
+  background: linear-gradient(to bottom right, #99ccff, #cce5ff);
+}

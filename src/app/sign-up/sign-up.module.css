@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f8ff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 600px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 255, 0.2);
+  background-color: #ffffff;
+}
+
+.title {
+  color: #007bff;
+  margin: 50px;
+  font-size: 40px;
+}
+.inputGroupWrap {
+  margin-bottom: 50px;
+}
+.inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.inputGroup input {
+  width: 220px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  background-color: #fbfbfb;
+  margin-bottom: 15px;
+}
+
+.inputGroup input::placeholder {
+  color: #aaa;
+}
+
+.verify {
+  display: flex;
+  position: relative;
+}
+
+.invalid {
+  color: red;
+  font-size: 10px;
+  position: absolute;
+  left: 67px;
+  bottom: -8px;
+}
+
+.mismatch {
+  color: red;
+  font-size: 10px;
+  position: absolute;
+  left: 102px;
+  bottom: -1px;
+}
+
+.submitButton {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}

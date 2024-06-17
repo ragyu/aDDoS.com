@@ -1,0 +1,19 @@
+.faqWrap {
+  display: flex;
+  flex-direction: column;
+  background: #f0f8ff;
+  min-height: 100vh;
+}
+
+.imageLayout {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.qna {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}

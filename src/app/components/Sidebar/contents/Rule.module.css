@@ -1,0 +1,26 @@
+.rule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rule textarea {
+  width: 90%;
+  height: 170px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btnWrap {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .btnWrap {
+    width: 103%;
+  }
+}

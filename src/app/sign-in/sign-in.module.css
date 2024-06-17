@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f8ff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 600px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 255, 0.2);
+  background-color: #ffffff;
+}
+
+.title {
+  color: #007bff;
+  margin: 75px;
+  font-size: 40px;
+}
+
+.input {
+  width: 220px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  background-color: #fbfbfb;
+  margin-bottom: 15px;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.remember {
+  margin-right: 100px;
+  margin-bottom: 50px;
+}
+
+.remember input {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+.submitButton {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+.signupLink {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.bar {
+  display: inline-block;
+  height: 12px;
+  width: 1px;
+  background-color: #cccccc;
+  margin: 0 15px;
+}
+
+.forgotPasswordLink {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.sign {
+  text-decoration: none;
+}
+
+.sign:hover {
+  color: rgba(100, 100, 255, 0.9);
+}

@@ -1,0 +1,57 @@
+.section1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background: url('../../../../public/assets/header.png');
+  background-size: cover;
+  height: 100vh;
+}
+
+.section2 {
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.section3 {
+  background-size: contain;
+  display: flex;
+  height: 100vh;
+}
+
+.section4 {
+  background-size: contain;
+  height: 100vh;
+  display: flex;
+}
+
+.section5 {
+  background-size: contain;
+  height: 100vh;
+  display: flex;
+}
+
+.section6 {
+  height: 160px;
+}
+
+.title {
+  margin-top: 300px;
+  font-size: 10em;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.intro {
+  font-size: 20px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 7em;
+  }
+}

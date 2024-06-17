@@ -1,0 +1,120 @@
+.contactWrap {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
+  background: #f0f8ff;
+}
+
+.contact {
+  width: 100%;
+  border-bottom: 2px solid #dfd6d6;
+  margin-bottom: 60px;
+}
+
+.contact h2 {
+  margin-left: 10px;
+}
+
+.form {
+  border-top: 2px solid #bbaaaa;
+  border-bottom: 2px solid #bbaaaa;
+  padding: 14px 0;
+}
+
+.form div {
+  margin-bottom: 12px;
+  margin-left: 10px;
+}
+
+.red {
+  color: red;
+  margin-right: 80px;
+}
+
+.firstAgree,
+.secondAgree {
+  display: flex;
+  font-size: 14px;
+}
+
+.secondAgree {
+  border-bottom: 2px solid #bbaaaa;
+}
+
+.agree {
+  margin-left: 3px;
+}
+
+.listWrap {
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+.buttonWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 160px;
+}
+
+.firstBtn,
+.secondBtn {
+  border: none;
+  border-radius: 6px;
+  padding: 12px 40px;
+  margin: 0 12px;
+}
+
+.firstBtn {
+  background-color: salmon;
+  color: black;
+  font-weight: bold;
+}
+
+.secondBtn {
+  background-color: lightskyblue;
+  color: white;
+  font-weight: bold;
+}
+
+.firstBtn:hover {
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+}
+
+.secondBtn:hover {
+  background-color: skyblue;
+  color: black;
+  cursor: pointer;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 5px 0;
+}
+
+.formGroup span {
+  flex-basis: 14%;
+  text-align: right;
+}
+
+.formGroup span:nth-child(2),
+.formGroup span:nth-child(2) {
+  flex-basis: auto;
+  text-align: left;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  border: 2px solid #adaaaa;
+  border-radius: 6px;
+  padding: 8px 50px;
+  text-align: center;
+}
+
+.formGroup select {
+  width: 18%;
+}
