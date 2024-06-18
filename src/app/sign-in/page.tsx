@@ -1,4 +1,3 @@
-'use client';
 import { useState } from 'react';
 import styles from './sign-in.module.css';
 import Link from 'next/link';
@@ -11,18 +10,17 @@ interface User {
   name: string;
 }
 
-function Signin({
-  onLogin = (user: User) => {
-    console.log('Logged in user:', user);
-  },
-}: {
+// onLogin 프로퍼티의 타입 정의
+type SigninProps = {
   onLogin?: (user: User) => void;
-}) {
+};
+
+function Signin({ onLogin }: SigninProps) {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태 추가
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,7 +31,7 @@ function Signin({
         throw new Error(`Network response was not ok: ${response.statusText}`);
       }
       const users = await response.json();
-      console.log('Fetched users:', users); // 디버깅을 위한 로그
+      console.log('Fetched users:', users);
 
       const user = users.find(
         (user: { email: string; password: string }) =>
@@ -41,21 +39,23 @@ function Signin({
       );
 
       if (user) {
-        console.log('User found:', user); // 디버깅을 위한 로그
-        onLogin(user);
+        console.log('User found:', user);
+        if (onLogin) {
+          onLogin(user); // onLogin 함수가 정의되어 있을 경우 호출
+        }
         alert('로그인에 성공했습니다.');
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('UserEmail', user.email);
-        localStorage.setItem('UserName', user.name); // 로컬스토리지에 사용자 정보 저장
+        localStorage.setItem('UserName', user.name);
 
         setTimeout(() => {
           router.push('/mypage');
-        }, 1000); // 1초 후 페이지 이동
+        }, 1000);
       } else {
         alert('이메일 또는 비밀번호가 잘못되었습니다.');
       }
     } catch (error) {
-      console.error('Fetch error:', error); // 디버깅을 위한 로그
+      console.error('Fetch error:', error);
       setError('네트워크 오류가 발생했습니다.');
     }
   };
@@ -64,7 +64,6 @@ function Signin({
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <h1 className={styles.title}>로그인</h1>
-        {/* 이메일 입력 필드 */}
         <input
           className={styles.input}
           type="email"
@@ -75,8 +74,6 @@ function Signin({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
-        {/* 비밀번호 입력 필드 */}
         <input
           className={styles.input}
           type="password"
@@ -87,23 +84,18 @@ function Signin({
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        {/* 이메일 기억 체크박스 */}
         <div className={styles.remember}>
           <label htmlFor="remember">
             <input type="checkbox" id="remember" name="remember" />
             이메일 기억하기
           </label>
         </div>
-
         <button type="submit" className={styles.submitButton}>
           로그인
         </button>
-
         {error && <p className={styles.error}>{error}</p>}
-
-        {/* 로그인 상태에 따라 버튼 텍스트 변경 */}
         {isLoggedIn ? (
-          <Link href="/mypage" className={styles.sign}>
+          <Link href="/my-page" className={styles.sign}>
             마이페이지
           </Link>
         ) : (
