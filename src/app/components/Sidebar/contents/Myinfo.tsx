@@ -1,14 +1,58 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Myinfo.module.css';
 import Image from 'next/image';
-// import Button from '../../Button/Button';
+import { useRouter } from 'next/navigation';
+
+interface User {
+  id: string;
+  email: string;
+  name: string;
+}
 
 export default function Myinfo() {
-  const [image, setImage] = useState('/assets/user.png');
-  // const [introduction, setIntroduction] =
-  //   useState('여기에 사용자 소개를 적어주세요.');
-  // const [tempIntroduction, setTempIntroduction] = useState('');
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState('');
+  const [image, setImage] = useState('/assets/user.png'); // Move this useState up
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      fetchUserInfo(user.email);
+    } else {
+      router.push('/sign-in');
+    }
+  }, [router]);
+
+  const fetchUserInfo = async (email: string) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/users?email=${email}`
+      );
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      const users = await response.json();
+      if (users.length > 0) {
+        setUser(users[0]);
+      } else {
+        setError('사용자 정보를 불러오는데 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      setError('네트워크 오류가 발생했습니다.');
+    }
+  };
+
+  if (error) {
+    return <div className={styles.error}>{error}</div>;
+  }
+
+  if (!user) {
+    return <div>Loading...</div>;
+  }
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -22,10 +66,6 @@ export default function Myinfo() {
       reader.readAsDataURL(event.target.files[0]);
     }
   };
-
-  // const handleSubmitIntroduction = () => {
-  //   setIntroduction(tempIntroduction);
-  // };
 
   return (
     <div className={styles.container}>
@@ -54,11 +94,11 @@ export default function Myinfo() {
       <table className={styles.infoSection}>
         <tr>
           <td className={styles.label}>이메일</td>
-          <td className={styles.data}>user@example.com</td>
+          <td className={styles.data}>{user.email}</td>
         </tr>
         <tr>
           <td className={styles.label}>이름</td>
-          <td className={styles.data}>UserName</td>
+          <td className={styles.data}>{user.name}</td>
         </tr>
         <tr>
           <td className={styles.label}>직책</td>
@@ -69,17 +109,6 @@ export default function Myinfo() {
           <td className={styles.data}>aDDoS.com</td>
         </tr>
       </table>
-      {/* <textarea
-        className={styles.introductionInput}
-        placeholder="소개를 수정하세요."
-        value={tempIntroduction}
-        onChange={(e) => setTempIntroduction(e.target.value)}
-      />
-      <Button
-        type="submit"
-        text="수정하기"
-        onClick={handleSubmitIntroduction}
-      /> */}
     </div>
   );
 }
