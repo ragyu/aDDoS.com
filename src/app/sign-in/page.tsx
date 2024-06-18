@@ -103,7 +103,7 @@ function Signin({
 
         {/* 로그인 상태에 따라 버튼 텍스트 변경 */}
         {isLoggedIn ? (
-          <Link href="/my-page" className={styles.sign}>
+          <Link href="/mypage" className={styles.sign}>
             마이페이지
           </Link>
         ) : (
