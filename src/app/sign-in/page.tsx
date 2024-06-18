@@ -16,7 +16,7 @@ type SigninProps = {
   onLogin?: (user: User) => void;
 };
 
-function Signin({ onLogin }: SigninProps) {
+export default function Signin({ onLogin }: SigninProps) {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -111,5 +111,3 @@ function Signin({ onLogin }: SigninProps) {
     </div>
   );
 }
-
-export default Signin;
