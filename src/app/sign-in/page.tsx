@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import styles from './sign-in.module.css';
 import Link from 'next/link';
